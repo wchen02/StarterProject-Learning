@@ -4,7 +4,7 @@ http = require 'http'
 path = require 'path'
 mongoose = require 'mongoose'
 
-#db = null
+db = null
 app = express()
 
 app.configure ->
@@ -24,7 +24,7 @@ app.configure "development", ->
     dumpExceptions: true
     showStack: true
   )
-  #db = mongoose.connect 'mongodb://user:user@ds035037.mongolab.com:35037/angular-blog'
+  db = mongoose.connect 'mongodb://user:password@host:port/dbname'
 
 # Routes
 app.get '/', routes.index
